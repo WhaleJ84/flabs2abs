@@ -1,18 +1,23 @@
 from csv import reader
-from os import environ
 from threading import Thread
 from time import sleep
 
+from configparser import ConfigParser
 from pyttsx3 import init
 
 from time_object import Time  # There must be a library out there that already does this.
 
+SETTINGS_FILE = 'flabs2abs/settings.ini'
 
-READY_TIME = environ.get('READY_TIME') or 10
-WORKOUT_FILE = environ.get('WORKOUT_FILE') or 'workout.csv'
-WORKOUT_LOOPS = environ.get('WORKOUT_LOOPS') or 3
-DEFAULT_WORKOUT_DURATION = environ.get('WORKOUT_DURATION') or '40'
-DEFAULT_BREAK_DURATION = environ.get('BREAK_DURATION') or '20'
+Config = ConfigParser()
+Config.read(SETTINGS_FILE)
+
+
+WORKOUT_FILE = Config.get('General', 'WORKOUT_FILE')
+READY_TIME = Config.get('Workout', 'READY_TIME')
+WORKOUT_LOOPS = Config.get('Workout', 'WORKOUT_LOOPS')
+DEFAULT_WORKOUT_DURATION = Config.get('Workout', 'DEFAULT_WORKOUT_DURATION')
+DEFAULT_BREAK_DURATION = Config.get('Workout', 'DEFAULT_BREAK_DURATION')
 
 
 def timer(duration):
