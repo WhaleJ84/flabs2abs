@@ -5,8 +5,13 @@ name = "pypi"
 
 [packages]
 pyttsx3 = "*"
+configparser = "*"
+argparse = "*"
 
 [dev-packages]
+black = "*"
+coverage = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.8"
