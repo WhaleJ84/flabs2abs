@@ -3,13 +3,13 @@ class Time:
         self.input = str(input)
         self.spoken_time = None
         self.total_seconds = int()
-        self.seconds = int(self.input.split(':')[-1])
+        self.seconds = int(self.input.split(":")[-1])
         try:
-            self.minutes = int(self.input.split(':')[-2])
+            self.minutes = int(self.input.split(":")[-2])
         except IndexError:
             self.minutes = 0
         try:
-            self.hours = int(self.input.split(':')[-3])
+            self.hours = int(self.input.split(":")[-3])
         except IndexError:
             self.hours = 0
         self.spoken_time = self._get_spoken_time()
@@ -53,7 +53,9 @@ class Time:
             spoken_time.append(spoken_seconds)
 
         if len(spoken_time) == 3:
-            self.spoken_time = f"{spoken_time[0]}, {spoken_time[1]} and {spoken_time[2]}"
+            self.spoken_time = (
+                f"{spoken_time[0]}, {spoken_time[1]} and {spoken_time[2]}"
+            )
         elif len(spoken_time) == 2:
             self.spoken_time = f"{spoken_time[0]} and {spoken_time[1]}"
         elif len(spoken_time) == 1:
@@ -63,5 +65,7 @@ class Time:
 
     def _get_total_seconds(self):
         time = f"{self.hours}:{self.minutes}:{self.seconds}"
-        self.total_seconds = sum(x * int(t) for x, t in zip([3600, 60, 1], time.split(":")))
+        self.total_seconds = sum(
+            x * int(t) for x, t in zip([3600, 60, 1], time.split(":"))
+        )
         return self.total_seconds
