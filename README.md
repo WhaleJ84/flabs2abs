@@ -8,9 +8,10 @@ I do.
 
 There's probably a million other solutions out there just like this but here's my take.
 I rushed this messy solution out, so I could get my fat ass exercising ASAP.
-I'll be adding onto this over time and turning it into a pip module.
 
 ## Usage
+
+Simply run `python3 flabs2abs/cli` to get started.
 
 This script only expects one thing on the user's part and that's to have `WORKOUT_FILE` in CSV format (see *Environment variables* below).
 The CSV is read in the following format:
