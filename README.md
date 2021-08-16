@@ -7,11 +7,12 @@ Do you get sick that everything on the market either wants you to pay them or wa
 I do.
 
 There's probably a million other solutions out there just like this but here's my take.
-I rushed this messy solution out, so I could get my fat ass exercising ASAP.
+I rushed this messy solution out to get my fat ass exercising ASAP.
 
 ## Usage
 
-Simply run `python3 flabs2abs/cli` to get started.
+Simply running: `python3 flabs2abs/cli.py` will begin the workout specified in `WORKOUT_FILE`.
+`python3 flabs2abs/cli.py -h` will show the usage information.
 
 This script only expects one thing on the user's part and that's to have `WORKOUT_FILE` in CSV format (see *Environment variables* below).
 The CSV is read in the following format:
