@@ -9,7 +9,7 @@ configparser = "*"
 argparse = "*"
 
 [dev-packages]
-black = "==20.8b1"
+black = "==24.3.0"
 coverage = "*"
 pylint = "*"
 
